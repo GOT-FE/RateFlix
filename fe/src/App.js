@@ -1,15 +1,18 @@
 import { useSelector } from "react-redux";
-import Auth from "./components/Auth/Auth";
-import Layout from "./components/Layout/Layout";
-import UserProfile from "./components/User/UserProfile";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
 function App() {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   return (
-    <>
-      <Layout />
-      {!isAuth && <Auth />}
-      {isAuth && <UserProfile />}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

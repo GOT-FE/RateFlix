@@ -1,8 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { useDispatch } from "react-redux";
-import { authActions } from "../../store/auth";
-const Auth = () => {
+import { authActions } from "../store/auth";
+import Layout from "../components/Layout/Layout";
+import { useNavigate } from "react-router-dom";
+const Login = () => {
+  const naviagate = useNavigate();
   const authStyles = css`
     margin: 5rem auto;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
@@ -37,24 +40,28 @@ const Auth = () => {
     event.preventDefault();
 
     dispatch(authActions.login());
+    naviagate("/");
   };
   return (
-    <main css={authStyles}>
-      <section>
-        <form onSubmit={loginHandler}>
-          <div className="control">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" />
-          </div>
-          <div className="control">
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
-          </div>
-          <button>Login</button>
-        </form>
-      </section>
-    </main>
+    <>
+      <Layout />
+      <main css={authStyles}>
+        <section>
+          <form onSubmit={loginHandler}>
+            <div className="control">
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" />
+            </div>
+            <div className="control">
+              <label htmlFor="password">Password</label>
+              <input type="password" id="password" />
+            </div>
+            <button>Login</button>
+          </form>
+        </section>
+      </main>
+    </>
   );
 };
 
-export default Auth;
+export default Login;

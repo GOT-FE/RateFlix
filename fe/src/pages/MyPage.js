@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-const UserProfile = () => {
+const MyPage = () => {
   const profileStyles = css`
     margin: 5rem auto;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
@@ -13,9 +13,9 @@ const UserProfile = () => {
   `;
   return (
     <main css={profileStyles}>
-      <h2>My User Profile</h2>
+      <h2>My Page</h2>
     </main>
   );
 };
 
-export default UserProfile;
+export default MyPage;

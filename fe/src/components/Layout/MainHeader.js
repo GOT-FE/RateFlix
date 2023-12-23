@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../../store/auth";
+import { Link } from "react-router-dom";
 const MainHeader = (props) => {
   const headerStyles = css`
     width: 100%;
@@ -47,21 +48,32 @@ const MainHeader = (props) => {
   const grayUnderLineStyles = css`
     border-bottom: 1px solid #cccccc;
   `;
+  const underLineStyles = css`
+    text-decoration: none;
+  `;
+
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
+  console.log(isAuth);
   const logoutHandler = () => {
     dispatch(authActions.logout());
   };
   return (
     <div css={grayUnderLineStyles}>
       <header css={headerStyles}>
-        <h1>RateFlix</h1>
+        <Link to="/" css={underLineStyles}>
+          <h1>RateFlix</h1>
+        </Link>
         {!isAuth && (
           <nav>
             <ul>
               <li>
-                <button css={loginoutButtonStyles}>로그인</button>
-                <button css={registerButtonStyles}>회원가입</button>
+                <Link to="/login">
+                  <button css={loginoutButtonStyles}>로그인</button>
+                </Link>
+                <Link to="/register">
+                  <button css={registerButtonStyles}>회원가입</button>
+                </Link>
               </li>
             </ul>
           </nav>
