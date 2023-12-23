@@ -1,10 +1,12 @@
 import Layout from "../components/Layout/Layout";
+import Movie from "../components/Movie/Movie";
+import MovieList from "../components/Movie/MovieList";
 
 const Home = () => {
   return (
     <>
       <Layout />
-      <h1>홈 화면입니다.</h1>
+      <MovieList />
     </>
   );
 };
