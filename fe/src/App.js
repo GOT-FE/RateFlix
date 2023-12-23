@@ -1,12 +1,14 @@
-import "./App.css";
+import { useSelector } from "react-redux";
+import Auth from "./components/Auth/Auth";
 import Layout from "./components/Layout/Layout";
-
+import UserProfile from "./components/User/UserProfile";
 function App() {
+  const isAuth = useSelector((state) => state.auth.isAuthenticated);
   return (
     <>
       <Layout />
-      <h1>프로젝트 시작!!</h1>
-      <h1>오류 해결 성공??</h1>
+      {!isAuth && <Auth />}
+      {isAuth && <UserProfile />}
     </>
   );
 }
