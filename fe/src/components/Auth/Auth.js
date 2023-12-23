@@ -10,7 +10,7 @@ const Auth = () => {
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
-    background-color: #decccc;
+    background-color: #caf0f8;
 
     .control {
       margin-bottom: 0.5rem;

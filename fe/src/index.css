@@ -12,16 +12,16 @@ body {
 button {
   font: inherit;
   cursor: pointer;
-  background-color: #1098f7;
-  border: 1px solid #1098f7;
-  color: black;
+  background-color: #03045e;
+  border: 1px solid #03045e;
+  color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 6px;
 }
 
 button:hover,
 button:active {
-  background-color: #1446a0;
-  border-color: #1446a0;
+  background-color: #0077b6;
+  border-color: #0077b6;
   color: white;
 }

@@ -10,10 +10,10 @@ const MainHeader = (props) => {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
+    background-color: white;
 
     h1 {
-      color: #1098f7;
+      color: #03045e;
     }
 
     ul {
@@ -22,24 +22,63 @@ const MainHeader = (props) => {
       padding: 0;
     }
   `;
+  const loginoutButtonStyles = css`
+    background-color: white;
+    color: grey;
+    margin: 0 5px;
+    border: none;
+
+    :hover {
+      background-color: white;
+      color: #cccccc;
+    }
+  `;
+  const registerButtonStyles = css`
+    background-color: white;
+    color: black;
+    margin: 0 5px;
+
+    :hover {
+      background-color: white;
+      color: #333333;
+      border-color: #333333;
+    }
+  `;
+  const grayUnderLineStyles = css`
+    border-bottom: 1px solid #cccccc;
+  `;
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   const logoutHandler = () => {
     dispatch(authActions.logout());
   };
   return (
-    <header css={headerStyles}>
-      <h1>RateFlix</h1>
-      {isAuth && (
-        <nav>
-          <ul>
-            <li>
-              <button onClick={logoutHandler}>Logout</button>
-            </li>
-          </ul>
-        </nav>
-      )}
-    </header>
+    <div css={grayUnderLineStyles}>
+      <header css={headerStyles}>
+        <h1>RateFlix</h1>
+        {!isAuth && (
+          <nav>
+            <ul>
+              <li>
+                <button css={loginoutButtonStyles}>로그인</button>
+                <button css={registerButtonStyles}>회원가입</button>
+              </li>
+            </ul>
+          </nav>
+        )}
+        {isAuth && (
+          <nav>
+            <ul>
+              <li>
+                <button css={loginoutButtonStyles} onClick={logoutHandler}>
+                  로그아웃
+                </button>
+              </li>
+            </ul>
+          </nav>
+        )}
+      </header>
+    </div>
   );
 };
 

@@ -9,7 +9,7 @@ const UserProfile = () => {
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
-    background-color: #decccc;
+    background-color: #caf0f8;
   `;
   return (
     <main css={profileStyles}>
