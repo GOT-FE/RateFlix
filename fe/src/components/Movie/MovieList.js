@@ -52,7 +52,7 @@ const DUMMY_MOVIES = [
 ];
 const MovieList = () => {
   const movieConStyles = css`
-    background-color: pink;
+    background-color: white;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -65,7 +65,7 @@ const MovieList = () => {
   return (
     <div css={movieConStyles}>
       {movies.map((movie) => (
-        <Movie movie={movie} />
+        <Movie movie={movie} key={movie.id} />
       ))}
     </div>
   );
