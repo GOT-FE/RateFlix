@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../../store/auth";
 import { Link } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 const MainHeader = (props) => {
   const headerStyles = css`
     width: 100%;
@@ -51,7 +52,15 @@ const MainHeader = (props) => {
   const underLineStyles = css`
     text-decoration: none;
   `;
+  const iconContainer = css`
+    display: flex;
+    align-items: center;
+  `;
 
+  const iconStyles = css`
+    font-size: 1.5em;
+    margin-left: 5px;
+  `;
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   console.log(isAuth);
@@ -81,10 +90,11 @@ const MainHeader = (props) => {
         {isAuth && (
           <nav>
             <ul>
-              <li>
+              <li css={iconContainer}>
                 <button css={loginoutButtonStyles} onClick={logoutHandler}>
                   로그아웃
                 </button>
+                <FaUserCircle css={iconStyles} />
               </li>
             </ul>
           </nav>
