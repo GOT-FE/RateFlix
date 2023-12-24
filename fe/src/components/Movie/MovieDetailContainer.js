@@ -4,6 +4,9 @@ import StarRating from "../Review/StarRating";
 import Card from "../UI/Card";
 import RatingChart from "../Review/RatingChart";
 import { useState, useEffect } from "react";
+import { TiPencil } from "react-icons/ti";
+import { RiBookmarkLine } from "react-icons/ri";
+
 const MovieDetailContainer = (props) => {
   const movie = props.movie;
   const containerStyles = css`
@@ -44,10 +47,6 @@ const MovieDetailContainer = (props) => {
     /* border: 1px solid violet; */
     padding: 10px;
     width: 80%;
-
-    /* padding: 1px; */
-    /* margin: 20px; */
-    /* width: 90%; */
   `;
   const review = css`
     /* border: 1px solid orange; */
@@ -63,6 +62,22 @@ const MovieDetailContainer = (props) => {
     flex-basis: 25%;
     padding-top: 70px;
     border-bottom: 1px solid #cccccc;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+  `;
+  const rightCon = css`
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    h1 {
+      margin-right: 10rem;
+    }
   `;
   const comment = css`
     /* border: 1px solid blue; */
@@ -106,6 +121,11 @@ const MovieDetailContainer = (props) => {
       <div css={review}>
         <div css={rating}>
           <StarRating />
+          <div css={rightCon}>
+            <h1>평균 ★ 3.7</h1>
+            <RiBookmarkLine size={35} />
+            <TiPencil size={35} />
+          </div>
         </div>
         <div css={comment}>
           <Card>
