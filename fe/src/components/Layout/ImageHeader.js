@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 const ImageHeader = (props) => {
   const image = props.image;
+  const movie = props.movie;
   const imgHeaderStyles = css`
     position: fixed;
     width: 100%;
@@ -56,6 +57,7 @@ const ImageHeader = (props) => {
   `;
   const containerStyles = css`
     border-bottom: 1px solid #cccccc;
+    position: relative;
 
     height: 30rem;
     background-image: url(${image});
@@ -75,12 +77,19 @@ const ImageHeader = (props) => {
     margin-left: 5px;
     color: white;
   `;
+  const textStyles = css`
+    position: absolute; /* 절대적 위치 지정 */
+    bottom: 30px; /* 하단에 위치 */
+    color: white; /* 글자 색상 */
+    padding: 0 10%;
+  `;
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   console.log(isAuth);
   const logoutHandler = () => {
     dispatch(authActions.logout());
   };
+  console.log(movie);
   return (
     <div css={containerStyles}>
       <header css={imgHeaderStyles}>
@@ -114,6 +123,15 @@ const ImageHeader = (props) => {
           </nav>
         )}
       </header>
+      <div css={textStyles}>
+        {/* 조금 더 크게 설정 필요 */}
+        <h1>{movie.title}</h1>
+        {/* padding 줄이기 */}
+        <h4>
+          {movie.year} • {movie.genre} • {movie.country}
+        </h4>
+        <h4>{movie.runningTime}분</h4>
+      </div>
     </div>
   );
 };

@@ -16,6 +16,7 @@ const DUMMY_MOVIES = [
     year: 2004,
     country: "미국",
     rating: 3.7,
+    runningTime: 100,
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const DUMMY_MOVIES = [
     year: 1993,
     country: "미국",
     rating: 4,
+    runningTime: 130,
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const DUMMY_MOVIES = [
     year: 2016,
     country: "미국",
     rating: 4,
+    runningTime: 116,
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ const DUMMY_MOVIES = [
     year: 2005,
     country: "일본",
     rating: 3.5,
+    runningTime: 102,
   },
   {
     id: 5,
@@ -48,6 +52,9 @@ const DUMMY_MOVIES = [
     year: 1994,
     country: "미국",
     rating: 4,
+    runningTime: 154,
+    // 등급
+    // 장르
   },
 ];
 const MovieList = () => {

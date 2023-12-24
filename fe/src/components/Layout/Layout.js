@@ -5,11 +5,8 @@ import ImageHeader from "./ImageHeader";
 import MainHeader from "./MainHeader";
 
 const Layout = (props) => {
-  const grayUnderLineStyles = css`
-    border-bottom: 1px solid #cccccc;
-  `;
-
   const image = props.image;
+  const movie = props.movie;
   const [scrollPosition, setScrollPosition] = useState(0);
   const [mainHeaderHeight, setMainHeaderHeight] = useState(0);
 
@@ -35,12 +32,12 @@ const Layout = (props) => {
 
   return (
     <>
-      {image && scrollPosition > mainHeaderHeight && (
+      {image && scrollPosition > mainHeaderHeight + 100 && (
         <div style={{ height: mainHeaderHeight }}>
           <MainHeader />
         </div>
       )}
-      {image && <ImageHeader image={image} />}
+      {image && <ImageHeader image={image} movie={movie} />}
 
       {!image && <MainHeader ref={mainHeaderRef} />}
 
