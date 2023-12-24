@@ -6,6 +6,8 @@ const Home = () => {
   return (
     <Layout>
       <MovieList />
+      <MovieList />
+      <MovieList />
     </Layout>
   );
 };

@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { useRef, useEffect, useState } from "react";
 import ImageHeader from "./ImageHeader";
 import MainHeader from "./MainHeader";
+import Footer from "./Footer";
 
 const Layout = (props) => {
   const image = props.image;
@@ -31,7 +32,13 @@ const Layout = (props) => {
   }, [mainHeaderHeight]);
 
   return (
-    <>
+    <div
+      css={css`
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* 최소 높이를 브라우저 높이만큼 설정 */
+      `}
+    >
       {image && scrollPosition > mainHeaderHeight + 100 && (
         <div style={{ height: mainHeaderHeight }}>
           <MainHeader />
@@ -43,13 +50,20 @@ const Layout = (props) => {
 
       <main
         css={css`
-          padding-top: 7rem;
-          position: relative; /* Relative positioning으로 설정 */
+          padding-top: ${image ? "1rem" : "7rem"};
+          position: relative;
+          flex: 1; /* 컨텐츠가 남은 공간을 모두 채우도록 설정 */
         `}
       >
         {props.children}
       </main>
-    </>
+      <Footer
+        css={css`
+          /* 필요한 스타일을 추가하세요 */
+          flex-shrink: 0; /* footer가 유연하게 크기를 조절하지 않도록 설정 */
+        `}
+      />
+    </div>
   );
 };
 

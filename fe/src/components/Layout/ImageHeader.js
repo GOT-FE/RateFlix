@@ -46,7 +46,7 @@ const ImageHeader = (props) => {
     /* background-color: white; */
     color: white;
     margin: 0 5px;
-    /* border: none; */
+    border-color: white;
 
     :hover {
       /* background-color: white; */
