@@ -9,7 +9,7 @@ const Movie = (props) => {
     /* padding: 1rem; */
     margin: 0 auto;
     border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); */
     /* text-align: center; */
   `;
   const imgStyles = {
@@ -19,17 +19,17 @@ const Movie = (props) => {
     height: "75%",
   };
   const titleStyles = css`
-    padding: 0.5rem 0rem 0rem 0.5rem;
+    padding: 0.5rem 0rem 0rem 0rem;
     font-size: large;
     font-weight: 600;
   `;
   const yearAndCountryStyles = css`
-    padding: 0rem 0rem 0rem 0.5rem;
+    padding: 0rem 0rem 0rem 0rem;
     font-size: medium;
     font-weight: 400;
   `;
   const ratingStyles = css`
-    padding: 0rem 0rem 0rem 0.5rem;
+    padding: 0rem 0rem 0rem 0rem;
     font-size: medium;
     font-weight: 400;
     color: #333333;

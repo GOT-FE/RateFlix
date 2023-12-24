@@ -4,11 +4,9 @@ import MovieList from "../components/Movie/MovieList";
 
 const Home = () => {
   return (
-    <>
-      <Layout>
-        <MovieList />
-      </Layout>
-    </>
+    <Layout>
+      <MovieList />
+    </Layout>
   );
 };
 export default Home;

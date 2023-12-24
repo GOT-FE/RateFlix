@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 const MainHeader = (props) => {
   const headerStyles = css`
+    top: 0;
+
+    position: fixed;
     width: 100%;
     height: 5rem;
     padding: 0 10%;
@@ -13,6 +16,10 @@ const MainHeader = (props) => {
     align-items: center;
     justify-content: space-between;
     background-color: white;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid #cccccc;
 
     h1 {
       color: #03045e;
@@ -46,9 +53,7 @@ const MainHeader = (props) => {
       border-color: #333333;
     }
   `;
-  const grayUnderLineStyles = css`
-    border-bottom: 1px solid #cccccc;
-  `;
+
   const underLineStyles = css`
     text-decoration: none;
   `;
@@ -68,39 +73,37 @@ const MainHeader = (props) => {
     dispatch(authActions.logout());
   };
   return (
-    <div css={grayUnderLineStyles}>
-      <header css={headerStyles}>
-        <Link to="/" css={underLineStyles}>
-          <h1>RateFlix</h1>
-        </Link>
-        {!isAuth && (
-          <nav>
-            <ul>
-              <li>
-                <Link to="/login">
-                  <button css={loginoutButtonStyles}>로그인</button>
-                </Link>
-                <Link to="/register">
-                  <button css={registerButtonStyles}>회원가입</button>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        )}
-        {isAuth && (
-          <nav>
-            <ul>
-              <li css={iconContainer}>
-                <button css={loginoutButtonStyles} onClick={logoutHandler}>
-                  로그아웃
-                </button>
-                <FaUserCircle css={iconStyles} />
-              </li>
-            </ul>
-          </nav>
-        )}
-      </header>
-    </div>
+    <header css={headerStyles}>
+      <Link to="/" css={underLineStyles}>
+        <h1>RateFlix</h1>
+      </Link>
+      {!isAuth && (
+        <nav>
+          <ul>
+            <li>
+              <Link to="/login">
+                <button css={loginoutButtonStyles}>로그인</button>
+              </Link>
+              <Link to="/register">
+                <button css={registerButtonStyles}>회원가입</button>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
+      {isAuth && (
+        <nav>
+          <ul>
+            <li css={iconContainer}>
+              <button css={loginoutButtonStyles} onClick={logoutHandler}>
+                로그아웃
+              </button>
+              <FaUserCircle css={iconStyles} />
+            </li>
+          </ul>
+        </nav>
+      )}
+    </header>
   );
 };
 

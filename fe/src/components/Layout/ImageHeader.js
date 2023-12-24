@@ -6,13 +6,16 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 const ImageHeader = (props) => {
   const image = props.image;
-  const headerStyles = css`
+  const imgHeaderStyles = css`
+    position: fixed;
     width: 100%;
     height: 5rem;
     padding: 0 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    z-index: 10;
 
     h1 {
       color: white;
@@ -70,6 +73,7 @@ const ImageHeader = (props) => {
   const iconStyles = css`
     font-size: 1.5em;
     margin-left: 5px;
+    color: white;
   `;
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
@@ -79,7 +83,7 @@ const ImageHeader = (props) => {
   };
   return (
     <div css={containerStyles}>
-      <header css={headerStyles}>
+      <header css={imgHeaderStyles}>
         <Link to="/" css={underLineStyles}>
           <h1>RateFlix</h1>
         </Link>
