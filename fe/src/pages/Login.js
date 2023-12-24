@@ -43,8 +43,7 @@ const Login = () => {
     naviagate("/");
   };
   return (
-    <>
-      <Layout />
+    <Layout>
       <main css={authStyles}>
         <section>
           <form onSubmit={loginHandler}>
@@ -60,7 +59,7 @@ const Login = () => {
           </form>
         </section>
       </main>
-    </>
+    </Layout>
   );
 };
 

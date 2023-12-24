@@ -1,9 +1,12 @@
+import ImageHeader from "./ImageHeader";
 import MainHeader from "./MainHeader";
 
 const Layout = (props) => {
+  const image = props.image;
   return (
     <>
-      <MainHeader />
+      {!image && <MainHeader />}
+      {image && <ImageHeader image={image} />}
       <main>{props.children}</main>
     </>
   );

@@ -5,8 +5,9 @@ import MovieList from "../components/Movie/MovieList";
 const Home = () => {
   return (
     <>
-      <Layout />
-      <MovieList />
+      <Layout>
+        <MovieList />
+      </Layout>
     </>
   );
 };

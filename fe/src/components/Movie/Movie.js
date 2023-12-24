@@ -5,7 +5,7 @@ import Card from "../UI/Card";
 import { Link } from "react-router-dom";
 const Movie = (props) => {
   const cardStyles = css`
-    width: 240px;
+    width: 245px;
     /* padding: 1rem; */
     margin: 0 auto;
     border-radius: 8px;
@@ -32,6 +32,7 @@ const Movie = (props) => {
     padding: 0rem 0rem 0rem 0.5rem;
     font-size: medium;
     font-weight: 400;
+    color: #333333;
   `;
   const [movie, setMovie] = useState(props.movie);
   return (
