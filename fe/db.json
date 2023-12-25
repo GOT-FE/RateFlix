@@ -1,50 +1,84 @@
 {
   "users": [
-    { "id": 1, "name": "User1", "email": "user1@example.com" },
-    { "id": 2, "name": "User2", "email": "user2@example.com" },
-    { "id": 3, "name": "User3", "email": "user3@example.com" },
-    { "id": 4, "name": "User4", "email": "user4@example.com" },
-    { "id": 5, "name": "User5", "email": "user5@example.com" },
-    { "id": 6, "name": "User6", "email": "user6@example.com" },
-    { "id": 7, "name": "User7", "email": "user7@example.com" },
-    { "id": 8, "name": "User8", "email": "user8@example.com" },
-    { "id": 9, "name": "User9", "email": "user9@example.com" },
-    { "id": 10, "name": "User10", "email": "user10@example.com" }
+    { "id": 1, "username": "영화매니아_1", "email": "user1@example.com" },
+    { "id": 2, "username": "시네마라이프", "email": "user2@example.com" },
+    { "id": 3, "username": "포플렉스_고수", "email": "user3@example.com" },
+    { "id": 4, "username": "영화광_89", "email": "user4@example.com" },
+    { "id": 5, "username": "실버스크린팬", "email": "user5@example.com" },
+    { "id": 6, "username": "할리우드매직", "email": "user6@example.com" },
+    { "id": 7, "username": "영화매니아_007", "email": "user7@example.com" },
+    { "id": 8, "username": "시네마매직123", "email": "user8@example.com" },
+    { "id": 9, "username": "필름광_101", "email": "user9@example.com" },
+    { "id": 10, "username": "시네마어드벤처러", "email": "user10@example.com" }
   ],
   "reviews": [
-    { "id": 1, "userId": 1, "content": "Great movie!", "rating": 4 },
-    { "id": 2, "userId": 2, "content": "Enjoyed it a lot.", "rating": 5 },
+    {
+      "id": 1,
+      "userId": 1,
+      "movieId": 1,
+      "content": "정말 멋진 영화!",
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "content": "정말 즐겁게 봤어요.",
+      "rating": 5
+    },
     {
       "id": 3,
       "userId": 3,
-      "content": "Could have been better.",
+      "movieId": 1,
+      "content": "좀 더 좋았으면 했어요.",
       "rating": 3
     },
     {
       "id": 4,
       "userId": 4,
-      "content": "Amazing storyline!",
+      "movieId": 1,
+      "content": "미친 스토리텔링!",
       "rating": 5
     },
-    { "id": 5, "userId": 5, "content": "Disappointing.", "rating": 2 },
-    { "id": 6, "userId": 6, "content": "Loved the acting.", "rating": 4 },
+    {
+      "id": 5,
+      "userId": 5,
+      "movieId": 1,
+      "content": "실망했어요.",
+      "rating": 2
+    },
+    {
+      "id": 6,
+      "userId": 6,
+      "movieId": 1,
+      "content": "연기를 정말 좋아했어요.",
+      "rating": 4
+    },
     {
       "id": 7,
       "userId": 7,
-      "content": "Not my type of movie.",
+      "movieId": 1,
+      "content": "내 취향이 아니에요.",
       "rating": 2
     },
-    { "id": 8, "userId": 8, "content": "Great visuals!", "rating": 4 },
+    {
+      "id": 8,
+      "userId": 8,
+      "movieId": 1,
+      "content": "시각 효과가 대박이에요!",
+      "rating": 4
+    },
     {
       "id": 9,
       "userId": 9,
-      "content": "Unexpected twists.",
+      "movieId": 1,
+      "content": "예상치 못한 전개에 놀랐어요.",
       "rating": 5
     },
     {
       "id": 10,
       "userId": 10,
-      "content": "A bit predictable.",
+      "movieId": 1,
+      "content": "조금은 예측 가능했어요.",
       "rating": 3
     }
   ],

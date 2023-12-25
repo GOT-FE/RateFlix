@@ -22,7 +22,37 @@ import axios from "../axios";
 const MovieDetail = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const [reviews, setReviews] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   // useEffect에서 movieId를 가지고 해당 id를 가진 영화의 상세 정보를 가지고 와 movie에 넣는다.
+  useEffect(() => {
+    async function getMovie() {
+      try {
+        setIsLoading(true);
+        const res = await axios.get(`/movies/${movieId}`);
+        const movie = res.data;
+        setMovie(movie);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching movie data: ", error);
+        setIsLoading(false);
+      }
+    }
+    getMovie();
+  }, [movieId]);
+  useEffect(() => {
+    async function getReviews() {
+      try {
+        const res = await axios.get(`/movies/${movieId}/reviews`);
+        const reviews = res.data;
+        console.log(reviews);
+        setReviews(reviews);
+      } catch (error) {
+        console.error("Error fetching review datas: ", error);
+      }
+    }
+    getReviews();
+  }, [movieId]);
   useEffect(() => {
     async function getMovie() {
       try {
@@ -36,11 +66,20 @@ const MovieDetail = () => {
     getMovie();
   }, [movieId]);
   return (
+    // 코멘트 없을 때 p 안 뜸 수정 필요 isLoading 변수 만들기 - 완료
+    // user 정보 가져와야 comment에 username 표시 가능
+    // css style 분리하기
     <>
       {movie && (
         <Layout image={movie.subImg} movie={movie}>
           <MovieDetailContainer movie={movie} />
-          <ReviewContainer />
+          {!isLoading && reviews && <ReviewContainer reviews={reviews} />}
+          {!isLoading && (!reviews || reviews.length === 0) && (
+            <p style={{ textAlign: "center", marginBottom: "10rem" }}>
+              작성된 코멘트가 없습니다! 코멘트를 처음으로 남겨보세요☺️
+            </p>
+          )}
+          {isLoading && <p>코멘트를 가져오고 있습니다...</p>}
         </Layout>
       )}
     </>

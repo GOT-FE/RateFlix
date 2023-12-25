@@ -35,14 +35,14 @@ const DUMMY_REVIEWS = [
     content: "인생영화임 bbb",
   },
 ];
-const ReviewContainer = () => {
-  const [reviews, setReviews] = useState(DUMMY_REVIEWS);
+const ReviewContainer = (props) => {
+  const [reviews, setReviews] = useState(props.reviews);
 
   return (
     <div css={containerStyles}>
       <div css={titleStyles}>
         <h1>코멘트</h1>
-        <h2> 2500+</h2>
+        <h2> {reviews.length}+</h2>
       </div>
       <div css={listStyles}>
         {reviews.map((review) => (

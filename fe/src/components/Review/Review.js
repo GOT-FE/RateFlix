@@ -3,19 +3,39 @@ import { css } from "@emotion/react";
 import { Common } from "../../styles/common";
 import { BsHandThumbsUp } from "react-icons/bs";
 import { BsChatSquareQuote } from "react-icons/bs";
+import { useEffect, useState } from "react";
+import axios from "../../axios";
 const Review = ({ review }) => {
+  const [userInfo, setUserInfo] = useState(null);
+  useEffect(() => {
+    async function getUserInfo() {
+      try {
+        const res = await axios.get(`/users/${review.userId}`);
+        const user = res.data;
+        setUserInfo(user);
+        console.log(userInfo);
+      } catch (error) {
+        console.error("Error fetching user data: ", error);
+      }
+    }
+    getUserInfo();
+  }, [review, userInfo]);
   return (
-    <div css={reviewStyles}>
-      <div css={infoStyles}>
-        {review.userName} <div>★ {review.rating}</div>
-      </div>
-      <div css={commentStyles}>{review.content}</div>
-      <div css={icons}>
-        <BsHandThumbsUp />
-        <div>3</div>
-      </div>
-      <div css={thumbsUp}>좋아요</div>
-    </div>
+    <>
+      {userInfo && (
+        <div css={reviewStyles}>
+          <div css={infoStyles}>
+            {userInfo.username} <div>★ {review.rating}</div>
+          </div>
+          <div css={commentStyles}>{review.content}</div>
+          <div css={icons}>
+            <BsHandThumbsUp />
+            <div>3</div>
+          </div>
+          <div css={thumbsUp}>좋아요</div>
+        </div>
+      )}
+    </>
   );
 };
 export default Review;
