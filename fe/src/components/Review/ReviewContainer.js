@@ -42,7 +42,7 @@ const ReviewContainer = () => {
       <h1>코멘트 2500+</h1>
       <div css={listStyles}>
         {reviews.map((review) => (
-          <Review review={review} />
+          <Review review={review} key={review.id} />
         ))}
       </div>
     </div>

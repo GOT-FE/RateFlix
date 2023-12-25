@@ -1,39 +1,23 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-import { useState } from "react";
-import { FaStar } from "react-icons/fa";
 import { Common } from "../../styles/common";
-
+import ReactStars from "react-rating-stars-component";
 const StarRating = () => {
-  const [selectedStars, setSelectedStars] = useState([
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
-
-  const handleStarClick = (starIndex) => {
-    const updatedStars = selectedStars.map((star, index) => index <= starIndex);
-    setSelectedStars(updatedStars);
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
   };
-
   return (
-    <div>
-      {selectedStars.map((star, index) => (
-        <FaStar
-          key={index}
-          color={star ? `${Common.colors.theme}` : `${Common.colors.grayHover}`}
-          onClick={() => handleStarClick(index)}
-          css={starsStyles}
-        />
-      ))}
-    </div>
+    <ReactStars
+      count={5}
+      onChange={ratingChanged}
+      size={40}
+      isHalf={true}
+      emptyIcon={<i className="far fa-star"></i>}
+      halfIcon={<i className="fa fa-star-half-alt"></i>}
+      fullIcon={<i className="fa fa-star"></i>}
+      activeColor={`${Common.colors.theme}`}
+      color={`${Common.colors.grayHover}`}
+    />
   );
 };
 
 export default StarRating;
-const starsStyles = css`
-  width: 40px;
-  height: 40px;
-`;
