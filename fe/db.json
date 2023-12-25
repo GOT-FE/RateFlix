@@ -169,7 +169,7 @@
     {
       "id": 51,
       "userId": 14,
-      "movieId": 1,
+      "movieId": 5,
       "content": "꿈 속에서도 계속 생각나는 영화!",
       "rating": 5
     },
@@ -197,7 +197,7 @@
     {
       "id": 55,
       "userId": 7,
-      "movieId": 5,
+      "movieId": 4,
       "content": "이런 영화를 기다렸어요.",
       "rating": 5
     },
@@ -212,14 +212,14 @@
     {
       "id": 97,
       "userId": 14,
-      "movieId": 2,
+      "movieId": 4,
       "content": "영상미가 훌륭한 영화였어요.",
       "rating": 4
     },
     {
       "id": 98,
       "userId": 14,
-      "movieId": 3,
+      "movieId": 1,
       "content": "분위기가 좋았습니다.",
       "rating": 4
     },
@@ -287,6 +287,66 @@
       "country": "미국",
       "rating": 4,
       "runningTime": 154
+    },
+    {
+      "id": 6,
+      "image": "/images/펄프.jpeg",
+      "title": "인터스텔라",
+      "year": 2014,
+      "country": "미국, 영국",
+      "rating": 4.6,
+      "runningTime": 169,
+      "genre": "SF, 드라마",
+      "grade": "12세 이상 관람가",
+      "plot": "인류의 미래를 위해 우주로 떠나는 탐험가들의 이야기"
+    },
+    {
+      "id": 7,
+      "image": "/images/펄프.jpeg",
+      "title": "다크 나이트",
+      "year": 2008,
+      "country": "미국, 영국",
+      "rating": 4.5,
+      "runningTime": 152,
+      "genre": "액션, 범죄, 드라마",
+      "grade": "15세 이상 관람가",
+      "plot": "고담시의 악을 막아야 하는 배트맨의 이야기"
+    },
+    {
+      "id": 8,
+      "image": "/images/펄프.jpeg",
+      "title": "라라랜드",
+      "year": 2016,
+      "country": "미국",
+      "rating": 4.3,
+      "runningTime": 128,
+      "genre": "드라마, 뮤지컬, 로맨스",
+      "grade": "전체 관람가",
+      "plot": "미국 LA에서 만난 남녀의 로맨스"
+    },
+    {
+      "id": 9,
+      "image": "/images/펄프.jpeg",
+      "title": "매트릭스",
+      "year": 1999,
+      "country": "미국, 호주",
+      "rating": 4.4,
+      "runningTime": 136,
+      "genre": "액션, SF",
+      "grade": "15세 이상 관람가",
+      "plot": "인류가 사는 세계가 가상 현실임을 깨닫게 되는 이야기"
+    },
+    {
+      "id": 10,
+      "image": "/images/펄프.jpeg",
+      "title": "위대한 쇼맨",
+      "year": 2017,
+      "country": "미국",
+      "rating": 4.2,
+      "runningTime": 105,
+      "genre": "드라마, 뮤지컬",
+      "grade": "전체 관람가",
+      "plot": "서커스를 꿈꾸는 남자의 이야기"
     }
   ]
 }

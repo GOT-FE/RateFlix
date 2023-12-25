@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import img1 from "../../images/새벽저주.jpeg";
 import img2 from "../../images/델마루이.jpeg";
 import img3 from "../../images/컨텍트.png";
@@ -57,7 +57,9 @@ const DUMMY_MOVIES = [
   },
 ];
 const MovieList = (props) => {
-  const [movies, setMovies] = useState(DUMMY_MOVIES);
+  // const [movies, setMovies] = useState(props.movies);
+  const movies = props.movies;
+  console.log(props.movies);
   return (
     <div css={movieConStyles}>
       {movies && movies.map((movie) => <Movie movie={movie} key={movie.id} />)}

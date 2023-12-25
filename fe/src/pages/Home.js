@@ -9,6 +9,7 @@ const Home = () => {
       try {
         const res = await axios.get(`/movies`);
         const movies = res.data;
+        console.log(movies);
         setMovies(movies);
       } catch (error) {
         console.error("Error fetching movie datas: ", error);
