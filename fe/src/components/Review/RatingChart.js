@@ -1,12 +1,15 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
+import { Common } from "../../styles/common";
 Chart.register(...registerables);
 
 const RatingChart = ({ ratings }) => {
   const maxCount = Math.max(...ratings);
   const backgroundColors = ratings.map((count) =>
-    count === maxCount ? "#03045e" : "#00b4d8"
+    count === maxCount
+      ? `${Common.colors.theme}`
+      : `${Common.colors.brightTheme}`
   );
 
   const data = {

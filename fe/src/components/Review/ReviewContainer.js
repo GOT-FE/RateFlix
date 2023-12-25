@@ -13,7 +13,7 @@ const DUMMY_REVIEWS = [
     id: 2,
     userName: "user2",
     rating: 3,
-    content: "볼만 했습니다 그냥저냥",
+    content: "볼만 했습니다 그냥저냥 보통!!",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const DUMMY_REVIEWS = [
     id: 4,
     userName: "user4",
     rating: 1,
-    content: "좀비영화 제 취향은 아니네요 ㅠㅠㅠㅠㅠ",
+    content: "제 취향은 아니네요 ㅠㅠㅠㅠㅠ",
   },
   {
     id: 5,
@@ -36,45 +36,35 @@ const DUMMY_REVIEWS = [
 ];
 const ReviewContainer = () => {
   const [reviews, setReviews] = useState(DUMMY_REVIEWS);
-  const containerStyles = css`
-    /* border: 1px solid red; */
-    background-color: white;
-    width: 80%;
-    display: flex;
-    /* flex-wrap: wrap; */
-    // 모바일 화면이 될 경우 wrap으로
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    justify-content: space-between;
-    /* border: 1px solid pink; */
-    h1 {
-      margin-left: 25px;
-    }
-  `;
-  const listStyles = css`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: 15px;
-    /* margin: 5px auto; */
-  `;
-  const reviewStyles = css`
-    margin: 5px; /* 각 리뷰 컴포넌트에 5px의 마진을 주어 간격을 조절 */
-  `;
+
   return (
     <div css={containerStyles}>
       <h1>코멘트 2500+</h1>
       <div css={listStyles}>
         {reviews.map((review) => (
-          //   <div key={review.id} css={reviewStyles}>
           <Review review={review} />
-          //   </div>
         ))}
       </div>
     </div>
   );
 };
 export default ReviewContainer;
+const containerStyles = css`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  justify-content: space-between;
+  h1 {
+    margin-left: 25px;
+  }
+`;
+const listStyles = css`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 15px;
+`;

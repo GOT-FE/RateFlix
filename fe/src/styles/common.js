@@ -2,6 +2,7 @@
 export const Common = {
   colors: {
     theme: "#03045e",
+    brightTheme: "#00b4d8",
 
     black: "#000000",
     blackHover: "#333333",
