@@ -45,7 +45,7 @@ const Layout = (props) => {
 
       <main
         css={css`
-          padding-top: ${image ? "1rem" : "7rem"};
+          padding-top: ${image ? "0rem" : "7rem"};
           position: relative;
           flex: 1; /* 컨텐츠가 남은 공간을 모두 채우도록 설정 */
         `}

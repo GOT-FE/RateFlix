@@ -74,7 +74,7 @@ const imgHeaderStyles = css`
   position: fixed;
   width: 100%;
   height: 5rem;
-  padding: 0 10%;
+  padding: 0 12%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -124,7 +124,11 @@ const iconStyles = css`
 `;
 const textStyles = css`
   position: absolute; /* 절대적 위치 지정 */
-  bottom: 30px; /* 하단에 위치 */
+  bottom: 50px; /* 하단에 위치 */
   color: white; /* 글자 색상 */
-  padding: 0 10%;
+  padding: 0 12%;
+
+  h4 {
+    margin: 0 auto;
+  }
 `;

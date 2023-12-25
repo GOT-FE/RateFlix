@@ -11,6 +11,7 @@ export const Common = {
     grayHover: "#cccccc",
 
     white: "#ffffff",
+    darkwhite: "#f5f5f5",
   },
   fontSize: {
     large: "1.25rem",

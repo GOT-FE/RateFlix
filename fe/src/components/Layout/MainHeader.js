@@ -24,7 +24,7 @@ const MainHeader = (props) => {
                 <button css={loginoutButtonStyles}>로그인</button>
               </Link>
               <Link to="/register">
-                <button>회원가입</button>
+                <button css={registerButtonStyles}>회원가입</button>
               </Link>
             </li>
           </ul>
@@ -53,7 +53,7 @@ const headerStyles = css`
   position: fixed;
   width: 100%;
   height: 5rem;
-  padding: 0 10%;
+  padding: 0 12%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,6 +78,17 @@ const loginoutButtonStyles = css`
 
   :hover {
     color: ${Common.colors.grayHover};
+  }
+`;
+const registerButtonStyles = css`
+  background: none;
+  color: black;
+  border-color: black;
+
+  :hover {
+    background: none;
+    color: ${Common.colors.blackHover};
+    border-color: ${Common.colors.blackHover};
   }
 `;
 const iconContainer = css`

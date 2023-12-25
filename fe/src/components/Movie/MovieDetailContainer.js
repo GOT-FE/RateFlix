@@ -16,39 +16,53 @@ const MovieDetailContainer = (props) => {
   }, []);
   return (
     <div css={containerStyles}>
-      <div css={posterAndGraph}>
-        <div css={poster}>
-          <img src={movie.image} alt="포스터" />
-        </div>
+      <div css={content}>
+        <div css={posterAndGraph}>
+          <div css={poster}>
+            <img src={movie.image} alt="포스터" />
+          </div>
 
-        <div css={graph}>
-          <div>별점 그래프</div>
-          <div>평균 ★ {movie.rating}</div>
-          <RatingChart ratings={[1, 2, 5, 4, 3]} />
-        </div>
-      </div>
-      <div css={review}>
-        <div css={rating}>
-          <StarRating />
-          <div css={rightCon}>
-            <h1>평균 ★ 3.7</h1>
-            <RiBookmarkLine size={35} />
-            <TiPencil size={35} />
+          <div css={graph}>
+            <h5>별점 그래프</h5>
+            <h3>평균 ★ {movie.rating}</h3>
+            <RatingChart ratings={[1, 2, 5, 4, 3]} />
           </div>
         </div>
-        <div css={comment}>
-          <Card>
-            user1 님의 감상을 글로 남겨보세요
-            <button>코멘트 남기기</button>
-          </Card>
+        <div css={review}>
+          <div css={rating}>
+            <StarRating />
+            <div css={iconAndText}>
+              <h1>3.7</h1>
+              <h5>평균 별점</h5>
+            </div>
+            <div css={rightCon}>
+              <div css={iconAndText}>
+                <RiBookmarkLine size={35} />
+                <h5>보고싶어요</h5>
+              </div>
+              <div css={iconAndText}>
+                <TiPencil size={35} />
+                <h5>코멘트</h5>
+              </div>
+            </div>
+          </div>
+          <div css={comment}>
+            <Card>
+              user1 님의 감상을 글로 남겨보세요
+              <button>코멘트 남기기</button>
+            </Card>
+          </div>
+          <div css={story}>{movie.plot}</div>
         </div>
-        <div css={story}>{movie.plot}</div>
       </div>
     </div>
   );
 };
 export default MovieDetailContainer;
 const containerStyles = css`
+  background-color: ${Common.colors.darkwhite};
+`;
+const content = css`
   /* border: 1px solid red; */
   width: 80%;
   display: flex;
@@ -82,7 +96,14 @@ const poster = css`
 const graph = css`
   /* border: 1px solid violet; */
   padding: 10px;
-  width: 80%;
+
+  h5 {
+    margin: 0 auto;
+    color: ${Common.colors.blackHover};
+  }
+  h3 {
+    margin: 0.5rem auto;
+  }
 `;
 const review = css`
   /* border: 1px solid orange; */
@@ -95,8 +116,8 @@ const review = css`
 `;
 const rating = css`
   /* border: 1px solid red; */
-  flex-basis: 25%;
-  padding-top: 70px;
+  flex-basis: 15%;
+  padding-top: 10px;
   border-bottom: 1px solid ${Common.colors.grayHover};
   display: flex;
   flex-direction: row;
@@ -105,22 +126,43 @@ const rating = css`
   align-items: center;
 `;
 const rightCon = css`
+  /* border: 1px solid orange; */
   display: flex;
   flex-direction: row;
   text-align: center;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  h1 {
-    margin-right: 10rem;
+`;
+const iconAndText = css`
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: 10rem; */
+  gap: 0.5rem;
+  h1,
+  h5 {
+    margin: 0 auto;
+    color: ${Common.colors.blackHover};
   }
 `;
 const comment = css`
   /* border: 1px solid blue; */
-  flex-basis: 25%;
+  flex-basis: 18%;
   border-bottom: 1px solid ${Common.colors.grayHover};
+  button {
+    border-color: ${Common.colors.grayHover};
+    font-size: large;
+    font-weight: 600;
+  }
 `;
 const story = css`
   /* border: 1px solid gray; */
   flex-basis: 25%;
+  color: ${Common.colors.darkHover};
+  font-size: medium;
+  font-weight: 600;
+  line-height: 1.5;
 `;
