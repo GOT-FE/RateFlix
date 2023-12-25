@@ -1,15 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Common } from "../../styles/common";
+import { BsHandThumbsUp } from "react-icons/bs";
+import { BsChatSquareQuote } from "react-icons/bs";
 const Review = ({ review }) => {
   return (
     <div css={reviewStyles}>
-      <div>
-        <h1>
-          {review.userName} ★ {review.rating}
-        </h1>
+      <div css={infoStyles}>
+        {review.userName} <div>★ {review.rating}</div>
       </div>
-      {review.content}
+      <div css={commentStyles}>{review.content}</div>
+      <div css={icons}>
+        <BsHandThumbsUp />
+        <div>3</div>
+      </div>
+      <div css={thumbsUp}>좋아요</div>
     </div>
   );
 };
@@ -20,9 +25,42 @@ const reviewStyles = css`
   padding: 1rem;
   // 일정 사이즈 창을 줄이면 한줄에 코멘트 2개만 보여지도록 반응형 필요
   width: 24%;
-  border: 1px solid ${Common.colors.grayHover};
+  height: 280px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-align: center;
+  gap: 1rem;
+  background-color: ${Common.colors.darkwhite};
+`;
+const infoStyles = css`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 20%;
+  border-bottom: 1px solid ${Common.colors.grayHover};
+`;
+const commentStyles = css`
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  flex-basis: 50%;
+  text-align: left;
+  border-bottom: 1px solid ${Common.colors.grayHover};
+`;
+const icons = css`
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: flex-start;
+  flex-basis: 15%;
+  border-bottom: 1px solid ${Common.colors.grayHover};
+`;
+const thumbsUp = css`
+  display: flex;
+  flex-direction: row;
+  flex-basis: 10%;
+  color: ${Common.colors.theme};
+  font-size: medium;
+  font-weight: 600;
 `;

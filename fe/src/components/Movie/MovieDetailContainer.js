@@ -31,6 +31,10 @@ const MovieDetailContainer = (props) => {
         <div css={review}>
           <div css={rating}>
             <StarRating />
+            {/* <div css={iconAndText}>
+              <h1>3.7</h1>
+              <h5>나의 별점</h5>
+            </div> */}
             <div css={iconAndText}>
               <h1>3.7</h1>
               <h5>평균 별점</h5>

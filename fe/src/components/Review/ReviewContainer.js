@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 import Review from "./Review";
 import { useState } from "react";
+import { Common } from "../../styles/common";
 const DUMMY_REVIEWS = [
   {
     id: 1,
@@ -39,7 +40,10 @@ const ReviewContainer = () => {
 
   return (
     <div css={containerStyles}>
-      <h1>코멘트 2500+</h1>
+      <div css={titleStyles}>
+        <h1>코멘트</h1>
+        <h2> 2500+</h2>
+      </div>
       <div css={listStyles}>
         {reviews.map((review) => (
           <Review review={review} key={review.id} />
@@ -57,8 +61,19 @@ const containerStyles = css`
   padding: 20px;
   margin: 20px auto;
   justify-content: space-between;
+  text-align: center;
   h1 {
     margin-left: 25px;
+  }
+`;
+const titleStyles = css`
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+
+  h2 {
+    margin: auto 0.5rem;
+    color: ${Common.colors.theme};
   }
 `;
 const listStyles = css`

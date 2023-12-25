@@ -27,6 +27,9 @@ const RatingChart = ({ ratings }) => {
   const options = {
     indexAxis: "x", // 막대 그래프의 방향을 가로로 설정
     plugins: {
+      tooltip: {
+        enabled: false, // 툴팁 비활성화
+      },
       legend: {
         display: false,
       },
