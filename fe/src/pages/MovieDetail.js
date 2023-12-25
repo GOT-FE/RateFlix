@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import img1 from "../images/새벽저주.jpeg";
 import subImg from "../images/새벽저주썸네일.jpeg";
-import MainHeader from "../components/Layout/MainHeader";
 import MovieDetailContainer from "../components/Movie/MovieDetailContainer";
 import ReviewContainer from "../components/Review/ReviewContainer";
 const DUMMY_MOVIE = {

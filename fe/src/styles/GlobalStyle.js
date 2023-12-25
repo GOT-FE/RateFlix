@@ -18,6 +18,7 @@ const baseStyle = css`
     cursor: pointer;
     color: ${Common.colors.black};
     border-color: ${Common.colors.black};
+    background-color: ${Common.colors.white};
     padding: 0.5rem 1.5rem;
     border-radius: 6px;
   }

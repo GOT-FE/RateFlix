@@ -4,37 +4,10 @@ import { useDispatch } from "react-redux";
 import { authActions } from "../store/auth";
 import Layout from "../components/Layout/Layout";
 import { useNavigate } from "react-router-dom";
+import { Common } from "../styles/common";
 const Login = () => {
   const naviagate = useNavigate();
-  const authStyles = css`
-    margin: 5rem auto;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
-    width: 25rem;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    background-color: #caf0f8;
 
-    .control {
-      margin-bottom: 0.5rem;
-    }
-
-    .control label {
-      display: block;
-      color: black;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .control input {
-      display: block;
-      width: 20rem;
-      margin: auto;
-      border-radius: 4px;
-      padding: 0.25rem;
-      border: 1px solid #ccc;
-    }
-  `;
   const dispatch = useDispatch();
   const loginHandler = (event) => {
     event.preventDefault();
@@ -48,14 +21,14 @@ const Login = () => {
         <section>
           <form onSubmit={loginHandler}>
             <div className="control">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">이메일</label>
               <input type="email" id="email" />
             </div>
             <div className="control">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">비밀번호</label>
               <input type="password" id="password" />
             </div>
-            <button>Login</button>
+            <button>로그인</button>
           </form>
         </section>
       </main>
@@ -64,3 +37,30 @@ const Login = () => {
 };
 
 export default Login;
+const authStyles = css`
+  margin: 5rem auto;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+  width: 25rem;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+
+  .control {
+    margin-bottom: 0.5rem;
+  }
+
+  .control label {
+    display: block;
+    color: black;
+    margin-bottom: 0.5rem;
+  }
+
+  .control input {
+    display: block;
+    width: 20rem;
+    margin: auto;
+    border-radius: 4px;
+    padding: 0.25rem;
+    border: 1px solid ${Common.colors.grayHover};
+  }
+`;
