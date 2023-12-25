@@ -9,7 +9,17 @@
     { "id": 7, "username": "영화매니아_007", "email": "user7@example.com" },
     { "id": 8, "username": "시네마매직123", "email": "user8@example.com" },
     { "id": 9, "username": "필름광_101", "email": "user9@example.com" },
-    { "id": 10, "username": "시네마어드벤처러", "email": "user10@example.com" }
+    { "id": 10, "username": "시네마어드벤처러", "email": "user10@example.com" },
+    { "id": 11, "username": "배부른호랑이", "email": "user11@example.com" },
+    { "id": 12, "username": "행복한사자", "email": "user12@example.com" },
+    { "id": 13, "username": "기분좋은곰돌이", "email": "user13@example.com" },
+    { "id": 14, "username": "신나는토끼", "email": "user14@example.com" },
+    { "id": 15, "username": "웃는강아지", "email": "user15@example.com" },
+    { "id": 16, "username": "열정적인다람쥐", "email": "user16@example.com" },
+    { "id": 17, "username": "성실한하마", "email": "user17@example.com" },
+    { "id": 18, "username": "지루한앵무새", "email": "user18@example.com" },
+    { "id": 19, "username": "깜짝놀란거북이", "email": "user19@example.com" },
+    { "id": 20, "username": "자유로운나무늘보", "email": "user20@example.com" }
   ],
   "reviews": [
     {
@@ -21,65 +31,211 @@
     },
     {
       "id": 2,
-      "userId": 2,
-      "content": "정말 즐겁게 봤어요.",
+      "userId": 1,
+      "movieId": 2,
+      "content": "한번 더 보고 싶어요.",
       "rating": 5
     },
     {
       "id": 3,
-      "userId": 3,
-      "movieId": 1,
-      "content": "좀 더 좋았으면 했어요.",
-      "rating": 3
+      "userId": 2,
+      "movieId": 3,
+      "content": "내 취향이 아니었어요.",
+      "rating": 2
     },
     {
       "id": 4,
-      "userId": 4,
-      "movieId": 1,
-      "content": "미친 스토리텔링!",
-      "rating": 5
-    },
-    {
-      "id": 5,
-      "userId": 5,
-      "movieId": 1,
-      "content": "실망했어요.",
-      "rating": 2
-    },
-    {
-      "id": 6,
-      "userId": 6,
-      "movieId": 1,
-      "content": "연기를 정말 좋아했어요.",
+      "userId": 2,
+      "movieId": 4,
+      "content": "연기가 훌륭했습니다.",
       "rating": 4
     },
     {
-      "id": 7,
-      "userId": 7,
+      "id": 5,
+      "userId": 3,
+      "movieId": 5,
+      "content": "감동적인 영화였어요.",
+      "rating": 5
+    },
+
+    {
+      "id": 6,
+      "userId": 4,
       "movieId": 1,
-      "content": "내 취향이 아니에요.",
-      "rating": 2
+      "content": "즐거운 시간이었어요.",
+      "rating": 5
+    },
+    {
+      "id": 7,
+      "userId": 5,
+      "movieId": 2,
+      "content": "감동적인 스토리에 눈물난다.",
+      "rating": 5
     },
     {
       "id": 8,
-      "userId": 8,
-      "movieId": 1,
-      "content": "시각 효과가 대박이에요!",
+      "userId": 6,
+      "movieId": 3,
+      "content": "좋은 연출이었어요.",
       "rating": 4
     },
     {
       "id": 9,
-      "userId": 9,
-      "movieId": 1,
-      "content": "예상치 못한 전개에 놀랐어요.",
-      "rating": 5
+      "userId": 7,
+      "movieId": 4,
+      "content": "아쉬웠던 부분도 있었지만 좋았어요.",
+      "rating": 3
     },
     {
       "id": 10,
-      "userId": 10,
+      "userId": 8,
+      "movieId": 5,
+      "content": "마음에 와닿는 영화였어요.",
+      "rating": 4
+    },
+
+    {
+      "id": 11,
+      "userId": 13,
       "movieId": 1,
-      "content": "조금은 예측 가능했어요.",
+      "content": "몰입감이 좋았습니다.",
+      "rating": 4
+    },
+    {
+      "id": 12,
+      "userId": 16,
+      "movieId": 2,
+      "content": "흥미로운 스토리텔링이었어요.",
+      "rating": 5
+    },
+    {
+      "id": 13,
+      "userId": 16,
+      "movieId": 3,
+      "content": "음악이 인상적이었습니다.",
       "rating": 3
+    },
+    {
+      "id": 14,
+      "userId": 20,
+      "movieId": 4,
+      "content": "대사가 좋았어요.",
+      "rating": 4
+    },
+    {
+      "id": 15,
+      "userId": 19,
+      "movieId": 5,
+      "content": "재미있는 영화였어요.",
+      "rating": 4
+    },
+
+    {
+      "id": 46,
+      "userId": 19,
+      "movieId": 1,
+      "content": "좋은 시간 보냈습니다.",
+      "rating": 4
+    },
+    {
+      "id": 47,
+      "userId": 17,
+      "movieId": 2,
+      "content": "전개가 조금 아쉬웠어요.",
+      "rating": 3
+    },
+    {
+      "id": 48,
+      "userId": 11,
+      "movieId": 3,
+      "content": "영화 분위기가 좋았어요.",
+      "rating": 4
+    },
+    {
+      "id": 49,
+      "userId": 15,
+      "movieId": 4,
+      "content": "연기력이 뛰어난 영화였어요.",
+      "rating": 5
+    },
+    {
+      "id": 50,
+      "userId": 9,
+      "movieId": 5,
+      "content": "진한 여운이 남는 영화였어요.",
+      "rating": 4
+    },
+
+    {
+      "id": 51,
+      "userId": 14,
+      "movieId": 1,
+      "content": "꿈 속에서도 계속 생각나는 영화!",
+      "rating": 5
+    },
+    {
+      "id": 52,
+      "userId": 14,
+      "movieId": 2,
+      "content": "여운이 많이 남는 영화였어요.",
+      "rating": 4
+    },
+    {
+      "id": 53,
+      "userId": 17,
+      "movieId": 3,
+      "content": "기대 이상이었습니다.",
+      "rating": 4
+    },
+    {
+      "id": 54,
+      "userId": 19,
+      "movieId": 4,
+      "content": "나를 미쳐버릴 것 같은 영화!",
+      "rating": 5
+    },
+    {
+      "id": 55,
+      "userId": 7,
+      "movieId": 5,
+      "content": "이런 영화를 기다렸어요.",
+      "rating": 5
+    },
+
+    {
+      "id": 96,
+      "userId": 4,
+      "movieId": 1,
+      "content": "감동을 주는 멋진 영화였어요.",
+      "rating": 5
+    },
+    {
+      "id": 97,
+      "userId": 14,
+      "movieId": 2,
+      "content": "영상미가 훌륭한 영화였어요.",
+      "rating": 4
+    },
+    {
+      "id": 98,
+      "userId": 14,
+      "movieId": 3,
+      "content": "분위기가 좋았습니다.",
+      "rating": 4
+    },
+    {
+      "id": 99,
+      "userId": 16,
+      "movieId": 4,
+      "content": "기대 이상이었습니다.",
+      "rating": 4
+    },
+    {
+      "id": 100,
+      "userId": 3,
+      "movieId": 5,
+      "content": "감정을 자극하는 영화였어요.",
+      "rating": 4
     }
   ],
   "movies": [
