@@ -1,12 +1,26 @@
 import Layout from "../components/Layout/Layout";
 import MovieList from "../components/Movie/MovieList";
-
+import { useEffect, useState } from "react";
+import axios from "../axios";
 const Home = () => {
+  const [movies, setMovies] = useState(null);
+  useEffect(() => {
+    async function getMovies() {
+      try {
+        const res = await axios.get(`/movies`);
+        const movies = res.data;
+        setMovies(movies);
+      } catch (error) {
+        console.error("Error fetching movie datas: ", error);
+      }
+    }
+    getMovies();
+  }, []);
   return (
     <Layout>
-      <MovieList />
-      <MovieList />
-      <MovieList />
+      <MovieList movies={movies} />
+      {/* <MovieList />
+      <MovieList /> */}
     </Layout>
   );
 };

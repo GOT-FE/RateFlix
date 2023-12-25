@@ -56,13 +56,11 @@ const DUMMY_MOVIES = [
     // 장르
   },
 ];
-const MovieList = () => {
+const MovieList = (props) => {
   const [movies, setMovies] = useState(DUMMY_MOVIES);
   return (
     <div css={movieConStyles}>
-      {movies.map((movie) => (
-        <Movie movie={movie} key={movie.id} />
-      ))}
+      {movies && movies.map((movie) => <Movie movie={movie} key={movie.id} />)}
     </div>
   );
 };

@@ -5,7 +5,8 @@ import { authActions } from "../../store/auth";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { Common } from "../../styles/common";
-const MainHeader = (props) => {
+import React, { forwardRef } from "react";
+const MainHeader = forwardRef((props, ref) => {
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   const logoutHandler = () => {
@@ -44,7 +45,7 @@ const MainHeader = (props) => {
       )}
     </header>
   );
-};
+});
 
 export default MainHeader;
 const headerStyles = css`

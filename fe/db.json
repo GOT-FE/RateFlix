@@ -1,0 +1,102 @@
+{
+  "users": [
+    { "id": 1, "name": "User1", "email": "user1@example.com" },
+    { "id": 2, "name": "User2", "email": "user2@example.com" },
+    { "id": 3, "name": "User3", "email": "user3@example.com" },
+    { "id": 4, "name": "User4", "email": "user4@example.com" },
+    { "id": 5, "name": "User5", "email": "user5@example.com" },
+    { "id": 6, "name": "User6", "email": "user6@example.com" },
+    { "id": 7, "name": "User7", "email": "user7@example.com" },
+    { "id": 8, "name": "User8", "email": "user8@example.com" },
+    { "id": 9, "name": "User9", "email": "user9@example.com" },
+    { "id": 10, "name": "User10", "email": "user10@example.com" }
+  ],
+  "reviews": [
+    { "id": 1, "userId": 1, "content": "Great movie!", "rating": 4 },
+    { "id": 2, "userId": 2, "content": "Enjoyed it a lot.", "rating": 5 },
+    {
+      "id": 3,
+      "userId": 3,
+      "content": "Could have been better.",
+      "rating": 3
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "content": "Amazing storyline!",
+      "rating": 5
+    },
+    { "id": 5, "userId": 5, "content": "Disappointing.", "rating": 2 },
+    { "id": 6, "userId": 6, "content": "Loved the acting.", "rating": 4 },
+    {
+      "id": 7,
+      "userId": 7,
+      "content": "Not my type of movie.",
+      "rating": 2
+    },
+    { "id": 8, "userId": 8, "content": "Great visuals!", "rating": 4 },
+    {
+      "id": 9,
+      "userId": 9,
+      "content": "Unexpected twists.",
+      "rating": 5
+    },
+    {
+      "id": 10,
+      "userId": 10,
+      "content": "A bit predictable.",
+      "rating": 3
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "image": "/images/새벽저주.jpeg",
+      "subImg": "/images/새벽저주썸네일.jpeg",
+      "title": "새벽의 저주",
+      "year": 2004,
+      "country": "미국",
+      "rating": 3.7,
+      "runningTime": 100,
+      "genre": "공포/액션",
+      "grade": "청불",
+      "plot": "위스콘신주의 한 마을에 한 아침, 애나의 이웃이 그녀의 남자친구를 공격하고 애나는 간신히 목숨을 건져 달아난다. 좀비들이 거리를 배회하고 동네가 불타는 상황에서 애나는 쇼핑몰 안에 피신하며 작은 그룹에 속하게 된다. 좀비 무리로부터 그들 자신을 보호하고 또한, 인류 최후의 보루로서 함께 공존하기 위해 가능한 모든 자원을 사용하고 생존하기 위해 힘을 합친다."
+    },
+    {
+      "id": 2,
+      "image": "/images/델마루이.jpeg",
+      "title": "델마와 루이스",
+      "year": 1993,
+      "country": "미국",
+      "rating": 4,
+      "runningTime": 130
+    },
+    {
+      "id": 3,
+      "image": "/images/컨텍트.png",
+      "title": "컨택트",
+      "year": 2016,
+      "country": "미국",
+      "rating": 4,
+      "runningTime": 116
+    },
+    {
+      "id": 4,
+      "image": "/images/불량모모.jpeg",
+      "title": "불량공주 모모코",
+      "year": 2005,
+      "country": "일본",
+      "rating": 3.5,
+      "runningTime": 102
+    },
+    {
+      "id": 5,
+      "image": "/images/펄프.jpeg",
+      "title": "펄프 픽션",
+      "year": 1994,
+      "country": "미국",
+      "rating": 4,
+      "runningTime": 154
+    }
+  ]
+}

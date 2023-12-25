@@ -7,12 +7,14 @@ import { useEffect } from "react";
 import { TiPencil } from "react-icons/ti";
 import { RiBookmarkLine } from "react-icons/ri";
 import { Common } from "../../styles/common";
-
+// 들어와야 할 데이터
+// 제목, 개봉년도, 장르, 국가, 러닝타임, 포스터, 포스터외이미지, 줄거리
+// 별점 분포
 const MovieDetailContainer = (props) => {
   const movie = props.movie;
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, []);
   return (
     <div css={containerStyles}>
@@ -25,7 +27,7 @@ const MovieDetailContainer = (props) => {
           <div css={graph}>
             <h5>별점 그래프</h5>
             <h3>평균 ★ {movie.rating}</h3>
-            <RatingChart ratings={[1, 2, 5, 4, 3]} />
+            <RatingChart ratings={[1, 2, 2, 3, 3, 3, 2, 3, 3, 4]} />
           </div>
         </div>
         <div css={review}>
@@ -36,7 +38,7 @@ const MovieDetailContainer = (props) => {
               <h5>나의 별점</h5>
             </div> */}
             <div css={iconAndText}>
-              <h1>3.7</h1>
+              <h1>{movie.rating}</h1>
               <h5>평균 별점</h5>
             </div>
             <div css={rightCon}>
