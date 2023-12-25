@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { useState } from "react";
-import Card from "../UI/Card";
 import img1 from "../../images/새벽저주.jpeg";
 import img2 from "../../images/델마루이.jpeg";
 import img3 from "../../images/컨텍트.png";
@@ -58,16 +57,6 @@ const DUMMY_MOVIES = [
   },
 ];
 const MovieList = () => {
-  const movieConStyles = css`
-    background-color: white;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    margin: 0 auto;
-    justify-content: space-between;
-  `;
   const [movies, setMovies] = useState(DUMMY_MOVIES);
   return (
     <div css={movieConStyles}>
@@ -78,3 +67,12 @@ const MovieList = () => {
   );
 };
 export default MovieList;
+const movieConStyles = css`
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  justify-content: space-between;
+`;
