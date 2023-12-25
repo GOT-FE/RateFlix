@@ -14,6 +14,8 @@ const baseStyle = css`
 
     font-size: ${Common.fontSize.medium};
     font-weight: 400;
+
+    text-decoration: none;
   }
   //button은 border 유무에 따라, 배경색 (어두운, 밝은)에 따라 4가지 이상의 스타일로 나누기
   button {

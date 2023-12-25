@@ -4,7 +4,9 @@ import { useRef, useEffect, useState } from "react";
 import ImageHeader from "./ImageHeader";
 import MainHeader from "./MainHeader";
 import Footer from "./Footer";
-
+// 이미지 헤더와 메인 헤더의 공통 코드 빼내기
+// 헤더 버튼 색깔 수정 필요
+// 스크롤 관련 학습 필요
 const Layout = (props) => {
   const image = props.image;
   const movie = props.movie;
@@ -18,7 +20,6 @@ const Layout = (props) => {
     if (mainHeaderRef.current) {
       setMainHeaderHeight(mainHeaderRef.current.clientHeight);
     }
-    console.log(mainHeaderHeight);
     const handleScroll = () => {
       const position = window.scrollY;
       setScrollPosition(position);
@@ -32,13 +33,7 @@ const Layout = (props) => {
   }, [mainHeaderHeight]);
 
   return (
-    <div
-      css={css`
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh; /* 최소 높이를 브라우저 높이만큼 설정 */
-      `}
-    >
+    <div css={conStyles}>
       {image && scrollPosition > mainHeaderHeight + 100 && (
         <div style={{ height: mainHeaderHeight }}>
           <MainHeader />
@@ -57,14 +52,17 @@ const Layout = (props) => {
       >
         {props.children}
       </main>
-      <Footer
-        css={css`
-          /* 필요한 스타일을 추가하세요 */
-          flex-shrink: 0; /* footer가 유연하게 크기를 조절하지 않도록 설정 */
-        `}
-      />
+      <Footer css={footerStyles} />
     </div>
   );
 };
 
 export default Layout;
+const footerStyles = css`
+  flex-shrink: 0; /* footer가 유연하게 크기를 조절하지 않도록 설정 */
+`;
+const conStyles = css`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 최소 높이를 브라우저 높이만큼 설정 */
+`;

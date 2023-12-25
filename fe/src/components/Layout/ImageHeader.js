@@ -4,96 +4,29 @@ import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../../store/auth";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import { Common } from "../../styles/common";
 const ImageHeader = (props) => {
   const image = props.image;
   const movie = props.movie;
-  const imgHeaderStyles = css`
-    position: fixed;
-    width: 100%;
-    height: 5rem;
-    padding: 0 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    z-index: 10;
-
-    h1 {
-      color: white;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-  `;
-  const loginoutButtonStyles = css`
-    background: none;
-    /* background-color: white; */
-    color: white;
-    margin: 0 5px;
-    border: none;
-
-    :hover {
-      background: none;
-      color: #cccccc;
-      border: none;
-    }
-  `;
-  const registerButtonStyles = css`
-    background: none;
-    /* background-color: white; */
-    color: white;
-    margin: 0 5px;
-    border-color: white;
-
-    :hover {
-      /* background-color: white; */
-      background: none;
-      color: #cccccc;
-      border-color: #cccccc;
-    }
-  `;
   const containerStyles = css`
-    border-bottom: 1px solid #cccccc;
     position: relative;
-
     height: 30rem;
     background-image: url(${image});
     background-size: cover; /* 이미지를 가로로 꽉 차게 설정 */
     background-position: center; /* 이미지 중앙 정렬 */
   `;
-  const underLineStyles = css`
-    text-decoration: none;
-  `;
-  const iconContainer = css`
-    display: flex;
-    align-items: center;
-  `;
 
-  const iconStyles = css`
-    font-size: 1.5em;
-    margin-left: 5px;
-    color: white;
-  `;
-  const textStyles = css`
-    position: absolute; /* 절대적 위치 지정 */
-    bottom: 30px; /* 하단에 위치 */
-    color: white; /* 글자 색상 */
-    padding: 0 10%;
-  `;
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
-  console.log(isAuth);
+
   const logoutHandler = () => {
     dispatch(authActions.logout());
   };
-  console.log(movie);
+
   return (
     <div css={containerStyles}>
       <header css={imgHeaderStyles}>
-        <Link to="/" css={underLineStyles}>
+        <Link to="/">
           <h1>RateFlix</h1>
         </Link>
         {!isAuth && (
@@ -137,3 +70,61 @@ const ImageHeader = (props) => {
 };
 
 export default ImageHeader;
+const imgHeaderStyles = css`
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 10;
+  h1 {
+    color: ${Common.colors.white};
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+`;
+const loginoutButtonStyles = css`
+  background: none;
+  color: white;
+  border: none;
+
+  :hover {
+    background: none;
+    color: ${Common.colors.grayHover};
+    border: none;
+  }
+`;
+const registerButtonStyles = css`
+  background: none;
+  color: white;
+  border-color: white;
+
+  :hover {
+    background: none;
+    color: ${Common.colors.grayHover};
+    border-color: ${Common.colors.grayHover};
+  }
+`;
+
+const iconContainer = css`
+  display: flex;
+  align-items: center;
+`;
+
+const iconStyles = css`
+  font-size: 1.5em;
+  margin-left: 5px;
+  color: white;
+`;
+const textStyles = css`
+  position: absolute; /* 절대적 위치 지정 */
+  bottom: 30px; /* 하단에 위치 */
+  color: white; /* 글자 색상 */
+  padding: 0 10%;
+`;
