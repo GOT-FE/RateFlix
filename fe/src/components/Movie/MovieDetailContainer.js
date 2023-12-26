@@ -198,6 +198,7 @@ const ratingStyles = css`
   text-align: center;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 0;
 `;
 const rightCon = css`
   /* border: 1px solid orange; */
@@ -231,6 +232,7 @@ const commentStyles = css`
     font-size: large;
     font-weight: 600;
   }
+  padding: 1rem 0;
 `;
 const story = css`
   /* border: 1px solid gray; */
@@ -239,4 +241,5 @@ const story = css`
   font-size: medium;
   font-weight: 600;
   line-height: 1.5;
+  padding: 1rem 0;
 `;
