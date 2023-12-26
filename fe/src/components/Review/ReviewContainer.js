@@ -1,43 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import Review from "./Review";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Common } from "../../styles/common";
-const DUMMY_REVIEWS = [
-  {
-    id: 1,
-    userName: "user1",
-    rating: 4,
-    content: "진짜 너무 재밌어요 올해 최고의 영화!",
-  },
-  {
-    id: 2,
-    userName: "user2",
-    rating: 3,
-    content: "볼만 했습니다 그냥저냥 보통!!",
-  },
-  {
-    id: 3,
-    userName: "user3",
-    rating: 4,
-    content: "좀비영화 중에 최고! 좀비영화의 바이블입니다ㅋㅋㅋㅋㅋㅋ",
-  },
-  {
-    id: 4,
-    userName: "user4",
-    rating: 1,
-    content: "제 취향은 아니네요 ㅠㅠㅠㅠㅠ",
-  },
-  {
-    id: 5,
-    userName: "user5",
-    rating: 5,
-    content: "인생영화임 bbb",
-  },
-];
 const ReviewContainer = (props) => {
-  const [reviews, setReviews] = useState(props.reviews);
-
+  const reviews = props.reviews;
+  useEffect(() => {
+    console.log(reviews);
+  }, [reviews]);
   return (
     <div css={containerStyles}>
       <div css={titleStyles}>

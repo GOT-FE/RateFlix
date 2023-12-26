@@ -1,15 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { Common } from "../../styles/common";
 import ReactStars from "react-rating-stars-component";
-const StarRating = () => {
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
+const StarRating = (props) => {
+  const ratingHandler = props.ratingHandler;
   return (
     <ReactStars
       count={5}
-      onChange={ratingChanged}
+      onChange={ratingHandler}
       size={50}
+      value={props.value}
       isHalf={true}
       emptyIcon={<i className="far fa-star"></i>}
       halfIcon={<i className="fa fa-star-half-alt"></i>}

@@ -20,6 +20,8 @@ const RatingChart = ({ ratings }) => {
         backgroundColor: backgroundColors,
         borderWidth: 1,
         borderRadius: 6,
+        barThickness: 20, // 막대 두께 조절
+        categoryPercentage: 0.9, // 막대 너비 조절
       },
     ],
   };

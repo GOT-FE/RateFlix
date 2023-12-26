@@ -18,4 +18,10 @@ const cardStyles = css`
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
+
+  textarea {
+    border: none;
+    width: 80%;
+    /* margin: 0.5rem; */
+  }
 `;

@@ -40,19 +40,19 @@ const MovieDetail = () => {
     }
     getMovie();
   }, [movieId]);
-  useEffect(() => {
-    async function getReviews() {
-      try {
-        const res = await axios.get(`/movies/${movieId}/reviews`);
-        const reviews = res.data;
-        console.log(reviews);
-        setReviews(reviews);
-      } catch (error) {
-        console.error("Error fetching review datas: ", error);
-      }
+  const getReviews = async () => {
+    try {
+      const res = await axios.get(`/movies/${movieId}/reviews`);
+      const reviews = res.data;
+      console.log("reviews are updated successfully");
+      setReviews(reviews);
+    } catch (error) {
+      console.error("Error fetching review datas: ", error);
     }
+  };
+  useEffect(() => {
     getReviews();
-  }, [movieId]);
+  }, []);
   useEffect(() => {
     async function getMovie() {
       try {
@@ -72,7 +72,7 @@ const MovieDetail = () => {
     <>
       {movie && (
         <Layout image={movie.subImg} movie={movie}>
-          <MovieDetailContainer movie={movie} />
+          <MovieDetailContainer movie={movie} getReviews={getReviews} />
           {!isLoading && reviews && <ReviewContainer reviews={reviews} />}
           {!isLoading && (!reviews || reviews.length === 0) && (
             <p style={{ textAlign: "center", marginBottom: "10rem" }}>

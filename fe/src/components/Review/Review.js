@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "../../axios";
 const Review = ({ review }) => {
   const [userInfo, setUserInfo] = useState(null);
+  // redux를 이용해 사용자 정보를 가져오는 방법 생각해보기
   useEffect(() => {
     async function getUserInfo() {
       try {
@@ -19,7 +20,7 @@ const Review = ({ review }) => {
       }
     }
     getUserInfo();
-  }, [review, userInfo]);
+  }, [review]);
   return (
     <>
       {userInfo && (
@@ -27,7 +28,7 @@ const Review = ({ review }) => {
           <div css={infoStyles}>
             {userInfo.username} <div>★ {review.rating}</div>
           </div>
-          <div css={commentStyles}>{review.content}</div>
+          <div css={commentStyles}>{review.comment}</div>
           <div css={icons}>
             <BsHandThumbsUp />
             <div>3</div>
