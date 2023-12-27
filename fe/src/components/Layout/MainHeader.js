@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { Common } from "../../styles/common";
 import React, { forwardRef } from "react";
+import img from "../../images/tomato.png";
 const MainHeader = forwardRef((props, ref) => {
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
@@ -15,7 +16,22 @@ const MainHeader = forwardRef((props, ref) => {
   return (
     <header css={headerStyles}>
       <Link to="/">
-        <h1>RateFlix</h1>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <h1>isRotten</h1>
+          <img
+            src={img}
+            alt="아이콘"
+            width={"45px"}
+            height={"45px"}
+            style={{ position: "relative", top: "0.8rem" }}
+          />
+        </div>
       </Link>
       {!isAuth && (
         <nav>
@@ -65,6 +81,7 @@ const headerStyles = css`
 
   h1 {
     color: ${Common.colors.theme};
+    font-family: "Inika Bold";
   }
 
   ul {

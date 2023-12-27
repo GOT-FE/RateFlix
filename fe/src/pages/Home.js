@@ -20,8 +20,6 @@ const Home = () => {
   return (
     <Layout>
       <MovieList movies={movies} />
-      {/* <MovieList />
-      <MovieList /> */}
     </Layout>
   );
 };

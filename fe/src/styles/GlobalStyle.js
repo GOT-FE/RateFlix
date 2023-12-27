@@ -3,6 +3,19 @@ import { css, Global } from "@emotion/react";
 import { Common } from "./common";
 
 const baseStyle = css`
+  @font-face {
+    font-family: "Inika";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/fonts/Inika-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "Inika Bold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/fonts/Inika-Bold.ttf");
+  }
   * {
     box-sizing: border-box;
   }

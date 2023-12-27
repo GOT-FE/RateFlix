@@ -5,6 +5,7 @@ import { authActions } from "../../store/auth";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { Common } from "../../styles/common";
+import img from "../../images/tomato.png";
 const ImageHeader = (props) => {
   const image = props.image;
   const movie = props.movie;
@@ -27,7 +28,22 @@ const ImageHeader = (props) => {
     <div css={containerStyles}>
       <header css={imgHeaderStyles}>
         <Link to="/">
-          <h1>RateFlix</h1>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
+            <h1>isRotten</h1>
+            <img
+              src={img}
+              alt="아이콘"
+              width={"45px"}
+              height={"45px"}
+              style={{ position: "relative", top: "0.8rem" }}
+            />
+          </div>
         </Link>
         {!isAuth && (
           <nav>
@@ -82,6 +98,7 @@ const imgHeaderStyles = css`
   z-index: 10;
   h1 {
     color: ${Common.colors.white};
+    font-family: "Inika Bold";
   }
   ul {
     list-style: none;
