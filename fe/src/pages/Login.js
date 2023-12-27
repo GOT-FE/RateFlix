@@ -44,6 +44,8 @@ const authStyles = css`
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
+  color: white;
+  border: 1px solid white;
 
   .control {
     margin-bottom: 0.5rem;
@@ -51,7 +53,7 @@ const authStyles = css`
 
   .control label {
     display: block;
-    color: black;
+    color: white;
     margin-bottom: 0.5rem;
   }
 

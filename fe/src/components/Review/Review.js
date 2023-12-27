@@ -52,6 +52,7 @@ const reviewStyles = css`
   text-align: center;
   gap: 1rem;
   background-color: ${Common.colors.darkwhite};
+  color: black;
 `;
 const infoStyles = css`
   display: flex;

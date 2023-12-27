@@ -34,8 +34,11 @@ const titleStyles = css`
   padding: 0.5rem 0rem 0rem 0rem;
   font-size: large;
   font-weight: 600;
+  color: white;
 `;
-const yearAndCountryStyles = css``;
+const yearAndCountryStyles = css`
+  color: ${Common.colors.darkwhite};
+`;
 const ratingStyles = css`
-  color: ${Common.colors.blackHover};
+  color: ${Common.colors.brightTheme};
 `;

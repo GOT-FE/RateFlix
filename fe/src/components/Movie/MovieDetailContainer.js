@@ -177,6 +177,7 @@ const graph = css`
   }
   h3 {
     margin: 0.5rem auto;
+    color: black;
   }
 `;
 const reviewStyles = css`
@@ -208,6 +209,7 @@ const rightCon = css`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  color: black;
 `;
 const iconAndText = css`
   /* border: 1px solid green; */
@@ -226,6 +228,7 @@ const iconAndText = css`
 const commentStyles = css`
   /* border: 1px solid blue; */
   flex-basis: 18%;
+
   border-bottom: 1px solid ${Common.colors.grayHover};
   button {
     border-color: ${Common.colors.grayHover};
@@ -237,7 +240,7 @@ const commentStyles = css`
 const story = css`
   /* border: 1px solid gray; */
   flex-basis: 25%;
-  color: ${Common.colors.darkHover};
+  color: black;
   font-size: medium;
   font-weight: 600;
   line-height: 1.5;

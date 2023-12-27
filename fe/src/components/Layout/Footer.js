@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { Common } from "../../styles/common";
 const Footer = () => {
   return (
     <div css={footerStyles}>
@@ -15,12 +16,12 @@ const footerStyles = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  background-color: ${Common.colors.grayHover};
 
   z-index: 1000;
 
   h1 {
-    color: white;
+    color: black;
   }
 
   ul {

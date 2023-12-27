@@ -29,7 +29,11 @@ const MainHeader = forwardRef((props, ref) => {
             alt="아이콘"
             width={"45px"}
             height={"45px"}
-            style={{ position: "relative", top: "0.8rem" }}
+            style={{
+              position: "relative",
+              top: "0.8rem",
+              marginLeft: "0.2rem",
+            }}
           />
         </div>
       </Link>
@@ -66,7 +70,7 @@ const MainHeader = forwardRef((props, ref) => {
 export default MainHeader;
 const headerStyles = css`
   top: 0;
-  background-color: white;
+  background-color: black;
   position: fixed;
   width: 100%;
   height: 5rem;
@@ -91,17 +95,19 @@ const headerStyles = css`
   }
 `;
 const loginoutButtonStyles = css`
-  color: ${Common.colors.gray};
+  color: ${Common.colors.white};
+  background-color: black;
   border: none;
-
+  border-bottom: 1px solid ${Common.colors.theme};
+  margin-right: 1rem;
   :hover {
     color: ${Common.colors.grayHover};
   }
 `;
 const registerButtonStyles = css`
   background: none;
-  color: black;
-  border-color: black;
+  color: white;
+  border-color: ${Common.colors.theme};
 
   :hover {
     background: none;
