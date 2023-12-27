@@ -19,6 +19,6 @@ const movieConStyles = css`
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-  margin: 0 auto;
+  margin: 2rem auto;
   justify-content: space-between;
 `;

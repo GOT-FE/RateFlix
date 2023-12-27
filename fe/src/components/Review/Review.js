@@ -2,10 +2,19 @@
 import { css } from "@emotion/react";
 import { Common } from "../../styles/common";
 import { BsHandThumbsUp } from "react-icons/bs";
-import { BsChatSquareQuote } from "react-icons/bs";
+import { ReactComponent as Tomato } from "../../images/tomato-svgrepo-com.svg";
 import { useEffect, useState } from "react";
 import axios from "../../axios";
 const Review = ({ review }) => {
+  // 추후에 사용자 id에 따라 랜덤하게 토마토 색 부여하기
+  // 현재는 리뷰마다 랜덤하게 부여 (렌더링 할 때 마다 바뀜...)
+  const generateRandomColor = () => {
+    const colors = ["#FF6347", "#4682B4", "#32CD32", "#8A2BE2", "#FFA500"]; // 랜덤 색상 배열
+    return colors[Math.floor(Math.random() * colors.length)]; // 배열에서 랜덤하게 색상 선택
+  };
+
+  // 기존 코드와 함께 사용자 ID에 따라 랜덤 색상 할당
+  const randomColor = generateRandomColor();
   const [userInfo, setUserInfo] = useState(null);
   // redux를 이용해 사용자 정보를 가져오는 방법 생각해보기
   useEffect(() => {
@@ -26,7 +35,10 @@ const Review = ({ review }) => {
       {userInfo && (
         <div css={reviewStyles}>
           <div css={infoStyles}>
-            {userInfo.username} <div>★ {review.rating}</div>
+            <div css={leftCon}>
+              <Tomato fill={randomColor} /> {userInfo.username}
+            </div>{" "}
+            <div>★ {review.rating}</div>
           </div>
           <div css={commentStyles}>{review.comment}</div>
           <div css={icons}>
@@ -61,6 +73,14 @@ const infoStyles = css`
   align-items: center;
   flex-basis: 20%;
   border-bottom: 1px solid ${Common.colors.grayHover};
+`;
+const leftCon = css`
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 `;
 const commentStyles = css`
   /* border: 1px solid red; */
