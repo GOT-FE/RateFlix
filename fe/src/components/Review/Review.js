@@ -53,11 +53,12 @@ const Review = ({ review }) => {
 };
 export default Review;
 const reviewStyles = css`
-  margin: 6px;
+  margin: 6px auto;
   border-radius: 6px;
   padding: 1rem;
   // 일정 사이즈 창을 줄이면 한줄에 코멘트 2개만 보여지도록 반응형 필요
-  width: 24%;
+  /* width: 24%; */ // flex 썼을 때
+  width: 100%; // grid 썼을 때
   height: 280px;
   display: flex;
   flex-direction: column;
@@ -65,6 +66,10 @@ const reviewStyles = css`
   gap: 1rem;
   background-color: ${Common.colors.darkwhite};
   color: black;
+  @media screen and (max-width: 1070px) {
+    width: 100%;
+    height: 280px;
+  }
 `;
 const infoStyles = css`
   display: flex;

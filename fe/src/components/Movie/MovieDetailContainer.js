@@ -145,6 +145,10 @@ const content = css`
   padding: 20px;
   margin: 0 auto;
   justify-content: space-between;
+
+  @media screen and (max-width: 1070px) {
+    flex-direction: column;
+  }
 `;
 const posterAndGraph = css`
   /* border: 1px solid green; */
@@ -170,6 +174,7 @@ const poster = css`
 const graph = css`
   /* border: 1px solid violet; */
   padding: 10px;
+  /* width: 100%; */
 
   h5 {
     margin: 0 auto;
